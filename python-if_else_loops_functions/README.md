@@ -4,11 +4,11 @@
 
 *Read or watch:*
 
-- More Control Flow Tools (https://docs.python.org/3/tutorial/controlflow.html)
-- IndentationError (https://www.youtube.com/watch?v=1QXOd2ZQs-Q)
-- How To Use String Formatters in Python 3 (https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
-- Learn to Program 2 : Looping (https://www.youtube.com/watch?v=swQEbZ6ez1I&list=PLGLfVvz_LVvTn3cK5e6LjhgGiSeVlIRwt&index=3)
-- Pycodestyle - Style Guide for Python Code (https://pypi.org/project/pycodestyle/)
+- [More Control Flow Tools] (https://docs.python.org/3/tutorial/controlflow.html)
+- [IndentationError] (https://www.youtube.com/watch?v=1QXOd2ZQs-Q)
+- [How To Use String Formatters in Python 3] (https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-python-3)
+- [Learn to Program 2 : Looping] (https://www.youtube.com/watch?v=swQEbZ6ez1I&list=PLGLfVvz_LVvTn3cK5e6LjhgGiSeVlIRwt&index=3)
+- [Pycodestyle - Style Guide for Python Code] (https://pypi.org/project/pycodestyle/)
 
 **Learning Objectives**
 
