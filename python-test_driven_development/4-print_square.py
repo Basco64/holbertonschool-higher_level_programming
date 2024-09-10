@@ -8,7 +8,7 @@ def print_square(size):
     """
     Prints a square with '#'.
 
-    size: The size of the square.
+    @size: The size of the square.
 
     Return: Nothing
     """

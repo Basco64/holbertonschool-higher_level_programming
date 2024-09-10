@@ -8,9 +8,10 @@ def say_my_name(first_name, last_name=""):
     """
     Prints 'My name is <first name> <last name>'
 
+    @first_name: The first name
+    @last_name: The last name
 
-    first_name: The first name
-    last_name: The last name
+    Return: Nothing
     """
 
     if not isinstance(first_name, str):
