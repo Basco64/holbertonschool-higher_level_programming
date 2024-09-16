@@ -59,4 +59,4 @@ class Rectangle:
 
     def __repr__(self):
         """Represents the rectangle"""
-        return "Rectangle(width={}, height={})".format(self.width, self.height)
+        return "Rectangle({}, {})".format(self.width, self.height)
