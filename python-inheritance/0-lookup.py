@@ -2,7 +2,7 @@
 """lookup class"""
 
 
-class lookup(obj):
+def lookup(obj):
     """lookup class"""
 
     return [i for i in dir(obj)]
