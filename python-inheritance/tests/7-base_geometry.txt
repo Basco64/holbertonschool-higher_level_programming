@@ -1,0 +1,6 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> shape = BaseGeometry()
+
+>>> shape.integer_validator("my_int", 12)
+>>> shape.integer_validator("width", 89)
