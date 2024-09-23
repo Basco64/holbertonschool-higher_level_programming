@@ -1,4 +1,4 @@
-#!/user/bin/python3
+#!/bin/python3
 """lookup class"""
 
 
