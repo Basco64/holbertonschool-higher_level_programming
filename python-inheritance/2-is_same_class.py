@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """check classes"""
 
+
 def is_same_class(obj, a_class):
     """check classes"""
 
