@@ -2,6 +2,7 @@
 
 from abc import ABC, abstractmethod
 
+
 class VerboseList(list):
     """verboselist class"""
 
@@ -25,5 +26,3 @@ class VerboseList(list):
         item = super().pop(index)
         print("Popped [{}] from the list.".format(item))
         return item
-
-
