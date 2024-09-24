@@ -2,6 +2,7 @@
 
 from abc import ABC, abstractmethod
 
+
 class Animal(ABC):
     """Animal class"""
 
@@ -9,11 +10,13 @@ class Animal(ABC):
     def sound(self):
         pass
 
+
 class Dog(Animal):
     """Dog class"""
 
     def sound(self):
         return "Bark"
+
 
 class Cat(Animal):
     """Cat class"""
