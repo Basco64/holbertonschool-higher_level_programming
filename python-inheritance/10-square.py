@@ -12,7 +12,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """is an integer?"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
             raise ValueError('{} must be greater than 0'.format(name))
@@ -43,10 +43,6 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """initialization method"""
-        if self.integer_validator('size', size):
-            self.__size = size
+        self.integer_validator('size', size):
+        self.__size = size
         super().__init__(size, size)
-
-    def area(self):
-        """calculate the area"""
-        return super().area()
