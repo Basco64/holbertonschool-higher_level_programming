@@ -8,7 +8,6 @@ class BaseGeometry:
     def area(self):
         """exception if area is not implemented"""
         raise Exception('area() is not implemented')
-        return self.__width * self.__height
 
     def integer_validator(self, name, value):
         """is an integer?"""
@@ -46,3 +45,7 @@ class Square(Rectangle):
         self.integer_validator('size', size):
         self.__size = size
         super().__init__(size, size)
+
+    def area(self):
+        """calculate the area"""
+        return super().area()
