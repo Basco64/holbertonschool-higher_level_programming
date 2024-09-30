@@ -9,8 +9,8 @@ def serialize_and_save_to_file(data, filename):
         os.remove(filename)
 
     with open(filename, 'w') as file:
-        j_str = json.dumps(data)
-        file.write(j_str)
+        json_data = json.dumps(data)  # Renommé ici
+        file.write(json_data)
 
 
 def load_and_deserialize(filename):
