@@ -12,7 +12,7 @@ def pascal_triangle(n):
 
     triangle = []
 
-    for i in range(n):
+    for _ in range(n):
         row = [1]
         if triangle:
             last_row = triangle[-1]
