@@ -6,9 +6,10 @@ import csv
 url = "https://jsonplaceholder.typicode.com/posts"
 req = requests.get(url)
 
+
 def fetch_and_print_posts():
     print(f"Status Code: {req.status_code}")
-    
+
     if req.status_code == 200:
         posts = req.json()
 
@@ -24,9 +25,10 @@ def fetch_and_save_posts():
 
         posts = req.json()
         for post in posts:
-            obj = {"id" : post['id'],
-                    "title" : post['title'],
-                    "body" : post['body']
+            obj = {
+                    "id": post['id'],
+                    "title": post['title'],
+                    "body": post['body']
                     }
             data.append(obj)
 
@@ -39,4 +41,3 @@ def fetch_and_save_posts():
 
     else:
         print("Error save")
-
