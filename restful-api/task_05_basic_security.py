@@ -9,18 +9,18 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 
 
-app.config['JWT_SECRET_KEY'] = 'your_secret_key_here'
+app.config['JWT_SECRET_KEY'] = 'test'
 jwt = JWTManager(app)
 auth = HTTPBasicAuth()
 
 
 users = {
-    "user": {
+    "user1": {
         "username": "user1",
         "password": generate_password_hash("user1"),
         "role": "user"
     },
-    "admin": {
+    "admin1": {
         "username": "admin1",
         "password": generate_password_hash("admin1"),
         "role": "admin"
@@ -75,4 +75,4 @@ def admin_only():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5000)
