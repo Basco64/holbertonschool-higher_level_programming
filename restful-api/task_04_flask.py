@@ -22,7 +22,7 @@ def status():
 
 @app.route("/data")
 def data():
-    return jsonify(listy(users.keys()))
+    return jsonify(list(users.keys()))
 
 
 @app.route("/users/<username>")
@@ -43,8 +43,8 @@ def add_user():
     age = data.get("age")
     city = data.get("city")
 
-    if not username or not name or not age or not city:
-        return jsonify({"error": "Missing information"}), 400
+    if not request.json.get("username"):
+        return jsonify({ "error": "Username is required" }), 400
 
     users[username] = {
         "name": name,
