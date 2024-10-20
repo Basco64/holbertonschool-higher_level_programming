@@ -29,7 +29,7 @@ def data():
 def get_user(username):
     user = users.get(username)
     if user:
-        return jsonify({"username": username, **user})
+        return jsonify(user), 200
     else:
         return jsonify({"error": "User not found"}), 404
 
@@ -43,8 +43,8 @@ def add_user():
     age = data.get("age")
     city = data.get("city")
 
-    if not request.json.get("username"):
-        return jsonify({ "error": "Username is required" }), 400
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
 
     users[username] = {
         "name": name,
@@ -56,4 +56,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run()
