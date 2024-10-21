@@ -1,2 +1,2 @@
---5.  Full description
+-- 5.  Full description
 SHOW CREATE TABLE `first_table`;

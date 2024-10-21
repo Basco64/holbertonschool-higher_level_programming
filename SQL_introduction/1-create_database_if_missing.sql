@@ -1,2 +1,2 @@
---1.  Create a database
+-- 1.  Create a database
 CREATE DATABASE IF NOT EXISTS `hbtn_0c_0`;
