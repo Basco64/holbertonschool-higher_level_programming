@@ -4,7 +4,7 @@ import sys
 import MySQLdb
 
 
-def filter_states(username, password, database):
+def filter_states(username, password, database, state_name):
     db = MySQLdb.connect(
       host="localhost",
       port=3306,
