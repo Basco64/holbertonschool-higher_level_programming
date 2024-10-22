@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+""" 0-select_states """
 
 import sys
 import MySQLdb
 
 
 def list_states(username, password, database):
+  """ Function for list states """
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
