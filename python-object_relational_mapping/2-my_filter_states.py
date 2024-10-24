@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+""" 2-my_filter_states """
 
 import sys
 import MySQLdb
 
 
 def filter_states(username, password, database, state_name):
+    """ Filter states by user input """
     db = MySQLdb.connect(
       host="localhost",
       port=3306,
@@ -22,6 +24,7 @@ def filter_states(username, password, database, state_name):
 
 
 if __name__ == "__main__":
+    """ Checking arguments and execution"""
     if len(sys.argv) != 4:
         print("Usage: ./2-my_filter_states.py "
               "<mysql username> "

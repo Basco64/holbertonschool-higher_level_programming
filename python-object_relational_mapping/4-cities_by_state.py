@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+""" 4-cities_by_state """
 
 import sys
 import MySQLdb
 
 
 def list_cities(username, password, database):
+    """ List cities by state """
     db = MySQLdb.connect(
       host="localhost",
       port=3306,
@@ -28,6 +30,7 @@ def list_cities(username, password, database):
 
 
 if __name__ == "__main__":
+    """ Checking arguments and execution"""
     if len(sys.argv) != 4:
         print("Usage: ./4-cities_by_state.py "
               "<mysql username> "

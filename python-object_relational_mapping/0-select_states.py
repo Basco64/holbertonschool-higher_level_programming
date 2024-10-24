@@ -6,7 +6,7 @@ import MySQLdb
 
 
 def list_states(username, password, database):
-  """ Function for list states """
+    """ Function for list states """
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -26,6 +26,7 @@ def list_states(username, password, database):
 
 
 if __name__ == "__main__":
+    """ Checking arguments and execution"""
     if len(sys.argv) != 4:
         print("Usage: ./0-select_states.py "
               "<mysql username> "
