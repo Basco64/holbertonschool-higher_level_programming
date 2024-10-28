@@ -18,8 +18,11 @@ if __name__ == "__main__":
     session = Session()
 
     # Query and display
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+    state = session.query(State).filter(State.name == sys.argv[4]).first()
+    if state:
+        print(state.id)
+    else:
+        print("Not found")
 
     # Close session
     session.close()
