@@ -13,7 +13,7 @@ if __name__ == "__main__":
             db=ys.argv[3]
         )
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY id")
     states = cursor.fetchall()
 
     for state in states:
