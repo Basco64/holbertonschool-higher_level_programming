@@ -18,7 +18,7 @@ if __name__ == "__main__":
     # Create cursor object
     cursor = db.cursor()
 
-    # Create and execute query with parameterized query for safety
+    # Create and execute query
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(query, (sys.argv[4],))
 

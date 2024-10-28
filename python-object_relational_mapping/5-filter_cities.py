@@ -5,36 +5,31 @@ import sys
 import MySQLdb
 
 
-def list_cities_by_state(username, password, database, state_name):
+if __name__ == "__main__":
+    # Connect to MySQL database
     db = MySQLdb.connect(
-      host="localhost",
-      port=3306,
-      user=username,
-      pwd=password,
-      db=database
+        host="localhost",
+        port=3306,
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
-    query = (
-        "SELECT cities.name \
-        FROM cities \
-        JOIN states ON cities.state_id = states.id \
-        WHERE states.name = %s \
-        ORDER BY cities.id ASC"
-    )
+
+    # Create cursor object
     cursor = db.cursor()
-    cursor.execute(query, (state_name))
+
+    # Create and execute query
+    cursor.execute("SELECT cities.name \
+                    FROM cities \
+                    JOIN states ON cities.state_id = states.id \
+                    WHERE states.name = %s \
+                    ORDER BY cities.id ASC".format(sys.argv[4]))
+
+    # Fetch and display results
     cities = cursor.fetchall()
     for city in cities:
         print(city[0])
+
+    # Close database connection
     cursor.close()
     db.close()
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: ./4-cities_by_state.py "
-              "<mysql username> "
-              "<mysql password> "
-              "<database name> "
-              "<state name>")
-    else:
-        list_cities(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
