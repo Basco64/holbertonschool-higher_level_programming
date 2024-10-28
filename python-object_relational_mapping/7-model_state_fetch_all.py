@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" First state model """
+""" 7-model_state_fetch_all.py """
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
