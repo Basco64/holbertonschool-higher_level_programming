@@ -1,17 +1,24 @@
 #!/usr/bin/python3
 """ First state model """
-from sqlalchemy import Column, Integer, String, create_engine
-from sqlalchemy.ext.declarative import declarative_base
+import sys
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
 
 
-Base = declarative_base()
+if __name__ == "__main__":
+    # Create database
+    # pool_pre_ping verifies connection to the database
+    engine = create_engine('mysql://{}:{}@localhost:3306/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
+    # Create session
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-class State(Base):
-    """State class"""
+    # Query and display
+    for state in session.query(State).order_by(State.id).all():
+        print("{}: {}".format(state.id, state.name))
 
-    __tablename__ = 'states'
-
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    name = Column(String(128), nullable=False)
+    # Close session
+    session.close()
