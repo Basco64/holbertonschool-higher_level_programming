@@ -27,10 +27,10 @@ if __name__ == "__main__":
     cursor.execute(query, (sys.argv[4],))
 
     # Fetch results
-    rows = cursor.fetchall()
+    cities = cursor.fetchall()
 
     # Print results
-    print(", ".join(city[0] for city in rows))
+    print(", ".join(city[0] for city in cities))
 
     # Close database connection
     cursor.close()
