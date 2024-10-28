@@ -2,22 +2,34 @@
 """ 0-select_states """
 
 import sys
-import MySQLdb
+from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+
+Base = declarative_base()
+
+class State(Base):
+    """Classe représentant la table states"""
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128), nullable=False)
+
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(
-            host="localhost",
-            port=3306,
-            user=sys.argv[1],
-            pwd=sys.argv[2],
-            db=ys.argv[3]
-        )
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states")
-    states = cursor.fetchall()
+    # Création de l'URL de connexion
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]))
 
+    # Création d'une session
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    # Requête pour récupérer tous les états, triés par id
+    states = session.query(State).order_by(State.id).all()
+
+    # Affichage des résultats
     for state in states:
-        print(state)
+        print("({}, '{}')".format(state.id, state.name))
 
-    cursor.close()
-    db.close()
+    # Fermeture de la session
+    session.close()
