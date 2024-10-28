@@ -17,9 +17,11 @@ if __name__ == "__main__":
     session = Session()
 
     # Query and display
-    for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state[0].id, state[0].name))
-        break
+    first_state = session.query(State).first()
+    if first_state:
+        print("{}: {}".format(first_state.id, first_state.name))
+    else:
+        print("Nothing")
 
     # Close session
     session.close()
