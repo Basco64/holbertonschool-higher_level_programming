@@ -1,6 +1,5 @@
-from flask import Flask, render_template
 import json
-
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -23,14 +22,13 @@ def contact():
 @app.route('/items')
 def items():
     try:
-        with open('items.json', 'r') as file:
-            data = json.load(file)
-            items_list = data.get("items", [])
-    except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error loading items: {e}")
-        items_list = []
+        with open('items.json', 'r') as f:
+            data = json.load(f)
+            item_data = data.get("items")
+    except FileNotFoundError:
+        data = []
 
-    return render_template('items.html', items=items_list)
+    return render_template('items.html', items=item_data)
 
 
 if __name__ == '__main__':
