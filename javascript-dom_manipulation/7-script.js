@@ -7,7 +7,7 @@ fetch(Url)
   })
   .then((data) => {
     console.log(data.results);
-    
+
     for (let i = 0; i < data.count; i++) {
       const newElement = document.createElement("li");
       newElement.textContent = data.results[i].title;
